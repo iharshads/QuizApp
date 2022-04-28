@@ -1,28 +1,23 @@
 import { Button, MenuItem, TextField } from '@mui/material'
 import React, { useState } from 'react'
-// import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import { useNavigate } from "react-router-dom";
-import Categories from './categories'
 import ErrorMssg from './Errormssg'
 
 const Home = ({name, setName,email, setEmail,phone, setPhone, fetchQuestions}) => {
 
-  const  [category, setCategory] = useState("")
   const [difficulty, setDifficulty] = useState("")
   const [error, setError] = useState(false)
     
-  // const history=useHistory();
   let navigate = useNavigate();
 
   const handleSubmit=()=>{
-    if(!name||!email||!phone||!category||!difficulty){
+    if(!name||!email||!phone||!difficulty){
       setError(true);
       return;
     }
     else{
       setError(false)
-      fetchQuestions(category, difficulty);
-      // history.push("/quiz");
+      fetchQuestions( difficulty);
       navigate("/quiz");
     }
   }
@@ -53,21 +48,6 @@ const Home = ({name, setName,email, setEmail,phone, setPhone, fetchQuestions}) =
                 onChange={(e)=>setPhone(e.target.value)}
 
                 />
-                <TextField 
-                style={{marginBottom:20}}
-                select
-                label='Select Category'
-                variant='outlined'
-                onChange={(e)=>setCategory(e.target.value)}
-                value={category}
-
-                >
-                  {Categories.map((cat)  =>(
-                    <MenuItem key={cat.category} value={cat.value} >
-                      {cat.category}
-                    </MenuItem>
-                  ))}
-                  </TextField>
 
 
                   <TextField 

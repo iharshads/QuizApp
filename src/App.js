@@ -13,6 +13,7 @@ import Result from './pages/Result';
 import React, { useState } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import axios from 'axios';
+import samplequestions from './pages/samplequestions'
 
 
 
@@ -23,10 +24,14 @@ function App() {
   const [phone, setPhone] = useState("")
   const [score, setScore] = useState(0)
   const [questions, setQuestions] = useState("")
-  const fetchQuestions=async(category='', difficulty='')=>{ 
-    const {data}= await axios.get(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
-    // console.log(data);
-    setQuestions(data.results);
+  const fetchQuestions=async(difficulty='')=>{ 
+
+
+    // const {data}= await axios.get(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`);
+    // setQuestions(data.results);
+
+    
+        setQuestions(samplequestions.results);
 
   };
   return (
