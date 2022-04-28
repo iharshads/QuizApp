@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +44,153 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+*::-webkit-scrollbar{
+  width: 5px;
+  background-color: grey;
+}
+
+.app{
+  background: linear-gradient(rgb(215, 238, 241), rgb(41, 222, 235));
+  height: 100.5vh;
+  border: 5px solid rgb(181, 142, 228);
+}
+
+/* header css  */
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title{
+text-transform: uppercase;
+font-size: 5vw;
+cursor: pointer;
+margin: 1rem;
+color: #282c34;
+text-decoration: none;
+}
+.hr-tag{
+margin: 10px;
+width: 80%;
+background-color: grey;
+border: 2px solid grey;
+border-radius: 20px;
+}
+
+/* home page css  */
+
+.content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.settings{
+  width: 45%;
+  padding: 10px;
+}
+
+.settings_select{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  flex: 0.8;
+  justify-content: space-around;
+}
+
+
+/* quiz page css  */
+.quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.subtitle {
+  font-size: 25px;
+  border: 1px solid black;
+  box-shadow: 4px 4px 2px black;
+  padding: 5px 10px;
+}
+
+.quizInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+/* question page css  */
+.question {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singleQuestion {
+  width: 95%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 5px solid grey;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.options {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.singleOption {
+  width: 46%;
+  height: 50px;
+  padding: 15px 20px;
+  margin: 10px;
+  box-shadow: 0 0 2px black;
+}
+
+@media (max-width: 614px) {
+  .singleOption {
+    width: 100%;
+  }
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.select {
+  background-color: rgb(7, 207, 0);
+  color: white;
+  box-shadow: 0 0 1px black;
+}
+
+.wrong {
+  background-color: rgb(233, 0, 0);
+  color: white;
+  box-shadow: 0 0 1px black;
+}
+
+/* result page css  */
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60vh;
+  text-align: center;
 }
